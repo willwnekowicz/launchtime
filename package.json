@@ -1,0 +1,74 @@
+{
+  "name": "launchtime",
+  "version": "1.0.0",
+  "description": "A powerful scheduling tool for macOS launchd",
+  "main": "out/main/index.js",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "dist": "electron-vite build && electron-builder",
+    "dist:mac": "bun run build && electron-builder --mac"
+  },
+  "build": {
+    "appId": "com.launchtime.app",
+    "productName": "LaunchTime",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "resources/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "resources/icon.icns",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "resources/entitlements.plist",
+      "entitlementsInherit": "resources/entitlements.plist"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^24.5.2",
+    "@vitejs/plugin-react": "^5.0.3",
+    "autoprefixer": "^10.4.21",
+    "canvas": "^3.2.0",
+    "concurrently": "^9.2.1",
+    "electron-vite": "^4.0.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "3",
+    "vite": "^7.1.7"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@types/uuid": "^11.0.0",
+    "electron": "^38.1.2",
+    "electron-builder": "^26.0.12",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "uuid": "^13.0.0"
+  }
+}
