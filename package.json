@@ -1,7 +1,7 @@
 {
-  "name": "launchtime",
+  "name": "runclauderun",
   "version": "1.0.0",
-  "description": "A powerful scheduling tool for macOS launchd",
+  "description": "A professional scheduler for Claude CLI commands on macOS",
   "main": "out/main/index.js",
   "module": "index.ts",
   "type": "module",
@@ -14,8 +14,8 @@
     "dist:mac": "bun run build && electron-builder --mac"
   },
   "build": {
-    "appId": "com.launchtime.app",
-    "productName": "LaunchTime",
+    "appId": "com.runclauderun.app",
+    "productName": "runCLAUDErun",
     "directories": {
       "output": "dist"
     },

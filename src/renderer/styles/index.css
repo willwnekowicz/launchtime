@@ -8,13 +8,18 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  body {
-    @apply bg-white dark:bg-gray-900;
-    user-select: none;
-    -webkit-user-select: none;
+  html {
+    @apply bg-claude-dark;
   }
 
-  input, textarea {
+  body {
+    @apply bg-claude-dark text-claude-text;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+  }
+
+  input, textarea, select {
     user-select: text;
     -webkit-user-select: text;
   }
@@ -26,22 +31,62 @@
   .non-draggable {
     -webkit-app-region: no-drag;
   }
+
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 1px solid theme('colors.claude.border');
+    background-color: theme('colors.claude.dark');
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  input[type="checkbox"]:checked {
+    background-color: theme('colors.claude.accent');
+    border-color: theme('colors.claude.accent');
+  }
+
+  input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: -3px;
+    left: 1px;
+    font-size: 10px;
+    color: white;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: theme('colors.claude.dark');
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: theme('colors.claude.border');
+    border-radius: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.claude.hover');
+  }
 }
 
 @layer components {
-  .glass-card {
-    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl shadow-xl;
-  }
-
   .btn-primary {
-    @apply bg-launchtime-blue text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors font-medium;
+    @apply bg-claude-accent text-white px-3 py-1 rounded text-xs font-mono hover:bg-claude-info transition-colors;
   }
 
   .btn-secondary {
-    @apply bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors font-medium;
+    @apply bg-claude-gray text-claude-text px-3 py-1 rounded text-xs font-mono hover:bg-claude-hover transition-colors;
   }
 
   .input-field {
-    @apply w-full px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-launchtime-blue;
+    @apply w-full px-2 py-1 bg-claude-gray border border-claude-border rounded text-xs font-mono text-claude-text focus:outline-none focus:border-claude-accent;
   }
 }

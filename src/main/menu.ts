@@ -33,7 +33,7 @@ export function createAppMenu() {
       label: 'File',
       submenu: [
         {
-          label: 'New Task',
+          label: 'New Claude Task',
           accelerator: 'CmdOrCtrl+N',
           click: () => {
             const win = BrowserWindow.getFocusedWindow()
@@ -105,15 +105,15 @@ export function createAppMenu() {
       label: 'Help',
       submenu: [
         {
-          label: 'Learn More',
+          label: 'Claude CLI Documentation',
           click: async () => {
-            await shell.openExternal('https://github.com/yourusername/launchtime')
+            await shell.openExternal('https://docs.anthropic.com/claude-code')
           }
         },
         {
-          label: 'Documentation',
+          label: 'runCLAUDErun Homepage',
           click: async () => {
-            await shell.openExternal('https://support.apple.com/guide/terminal/script-management-with-launchd-apdc6c1077b-5d5d-4d35-9c19-60f2397b2369/mac')
+            await shell.openExternal('https://github.com/runclauderun/runclauderun')
           }
         }
       ]

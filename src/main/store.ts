@@ -38,4 +38,8 @@ export class Store {
     delete this.data[key]
     this.save()
   }
+
+  getAll(): Record<string, any> {
+    return { ...this.data }
+  }
 }
