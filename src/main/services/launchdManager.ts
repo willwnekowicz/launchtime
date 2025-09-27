@@ -28,7 +28,7 @@ export class LaunchdManager {
     const launchtimeTasks: LaunchdTask[] = []
 
     for (const file of files) {
-      if (file.startsWith('com.launchtime.') && file.endsWith('.plist')) {
+      if (file.startsWith('com.runclauderun.') && file.endsWith('.plist')) {
         const filePath = join(this.launchAgentsDir, file)
         const content = await fs.readFile(filePath, 'utf-8')
 
@@ -44,7 +44,7 @@ export class LaunchdManager {
   }
 
   async createTask(task: Omit<LaunchdTask, 'id' | 'enabled'>): Promise<LaunchdTask> {
-    const taskId = `com.launchtime.${uuidv4()}`
+    const taskId = `com.runclauderun.${uuidv4()}`
     const plistPath = join(this.launchAgentsDir, `${taskId}.plist`)
 
     const plistBuilder = new PlistBuilder()

@@ -13,14 +13,14 @@ export function Preferences({ onClose }: PreferencesProps) {
   }, [])
 
   const loadPreferences = async () => {
-    const prefs = await window.launchtime.preferences.get()
+    const prefs = await window.runclauderun.preferences.get()
     setStartOnLaunch(prefs.startOnLaunch)
     setLoading(false)
   }
 
   const handleStartOnLaunchChange = async (enabled: boolean) => {
     setStartOnLaunch(enabled)
-    await window.launchtime.preferences.set('startOnLaunch', enabled)
+    await window.runclauderun.preferences.set('startOnLaunch', enabled)
   }
 
   if (loading) {
@@ -62,14 +62,14 @@ export function Preferences({ onClose }: PreferencesProps) {
                       Launch at Login
                     </div>
                     <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                      Automatically start LaunchTime when you log in to your Mac
+                      Automatically start runCLAUDErun when you log in to your Mac
                     </div>
                   </div>
                   <div
                     onClick={() => handleStartOnLaunchChange(!startOnLaunch)}
                     className={`
                       w-12 h-6 rounded-full p-1 transition-colors cursor-pointer
-                      ${startOnLaunch ? 'bg-launchtime-blue' : 'bg-gray-300 dark:bg-gray-600'}
+                      ${startOnLaunch ? 'bg-runclauderun-blue' : 'bg-gray-300 dark:bg-gray-600'}
                     `}
                   >
                     <div className={`
@@ -83,24 +83,24 @@ export function Preferences({ onClose }: PreferencesProps) {
 
             <div className="border-b border-gray-200 dark:border-gray-700 pb-6">
               <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">
-                About LaunchTime
+                About runCLAUDErun
               </h3>
 
               <div className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
                 <div className="flex items-center space-x-2">
-                  <div className="w-10 h-10 bg-launchtime-blue rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-runclauderun-blue rounded-lg flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                     </svg>
                   </div>
                   <div>
-                    <div className="font-medium text-gray-900 dark:text-gray-100">LaunchTime</div>
+                    <div className="font-medium text-gray-900 dark:text-gray-100">runCLAUDErun</div>
                     <div>Version 1.0.0</div>
                   </div>
                 </div>
 
                 <p className="pt-2">
-                  LaunchTime is a powerful scheduling tool for macOS that makes it easy to manage
+                  runCLAUDErun is a powerful scheduling tool for macOS that makes it easy to manage
                   launchd tasks with a beautiful, intuitive interface.
                 </p>
 
@@ -109,7 +109,7 @@ export function Preferences({ onClose }: PreferencesProps) {
                   <div className="space-y-1">
                     <div><span className="font-mono">⌘N</span> - Create new task</div>
                     <div><span className="font-mono">⌘,</span> - Open preferences</div>
-                    <div><span className="font-mono">⌘Q</span> - Quit LaunchTime</div>
+                    <div><span className="font-mono">⌘Q</span> - Quit runCLAUDErun</div>
                   </div>
                 </div>
               </div>
@@ -121,15 +121,15 @@ export function Preferences({ onClose }: PreferencesProps) {
               </h3>
 
               <div className="space-y-3">
-                <button className="text-launchtime-blue hover:underline text-sm">
+                <button className="text-runclauderun-blue hover:underline text-sm">
                   View Documentation
                 </button>
                 <br />
-                <button className="text-launchtime-blue hover:underline text-sm">
+                <button className="text-runclauderun-blue hover:underline text-sm">
                   Report an Issue
                 </button>
                 <br />
-                <button className="text-launchtime-blue hover:underline text-sm">
+                <button className="text-runclauderun-blue hover:underline text-sm">
                   Visit GitHub Repository
                 </button>
               </div>

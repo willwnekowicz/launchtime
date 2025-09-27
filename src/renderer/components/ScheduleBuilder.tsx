@@ -48,7 +48,7 @@ export function ScheduleBuilder({ schedule, onChange }: ScheduleBuilderProps) {
               className={`
                 p-3 rounded-lg border text-left transition-all
                 ${schedule.type === value
-                  ? 'border-launchtime-blue bg-blue-50 dark:bg-blue-900/20'
+                  ? 'border-runclauderun-blue bg-blue-50 dark:bg-blue-900/20'
                   : 'border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500'
                 }
               `}
@@ -261,7 +261,7 @@ export function ScheduleBuilder({ schedule, onChange }: ScheduleBuilderProps) {
             type="checkbox"
             checked={schedule.enabled}
             onChange={(e) => onChange({ ...schedule, enabled: e.target.checked })}
-            className="mr-2 w-4 h-4 text-launchtime-blue rounded focus:ring-launchtime-blue"
+            className="mr-2 w-4 h-4 text-runclauderun-blue rounded focus:ring-runclauderun-blue"
           />
           <span className="text-sm text-gray-700 dark:text-gray-300">
             Enable schedule immediately after saving

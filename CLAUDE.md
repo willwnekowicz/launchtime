@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-LaunchTime is a macOS desktop application for managing launchd scheduled tasks with a clean, intuitive interface. Built with Electron, TypeScript, React, and Tailwind CSS.
+runCLAUDErun is a macOS desktop application for managing launchd scheduled tasks with a clean, intuitive interface. Built with Electron, TypeScript, React, and Tailwind CSS.
 
 ## Common Development Commands
 
@@ -26,7 +26,7 @@ bun dist:mac      # Build and package the app for macOS distribution
 
 ### Renderer Process (`src/renderer/`)
 - React-based UI with TypeScript
-- Tailwind CSS for styling with custom LaunchTime design tokens
+- Tailwind CSS for styling with custom runCLAUDErun design tokens
 - Component-based architecture:
   - `TaskList` - Sidebar with task list and toggle switches
   - `TaskEditor` - Main editor for creating/editing tasks
@@ -34,7 +34,7 @@ bun dist:mac      # Build and package the app for macOS distribution
   - `Preferences` - App preferences including startup settings
 
 ### IPC Communication
-- Preload script exposes safe API via `window.launchtime`
+- Preload script exposes safe API via `window.runclauderun`
 - Channels: launchd operations, preferences, file dialogs
 - Event-based updates for task list synchronization
 
@@ -43,7 +43,7 @@ bun dist:mac      # Build and package the app for macOS distribution
 1. **Schedule Types**: Manual, Interval, Calendar, Startup, File Watch
 2. **Task Management**: Create, edit, delete, enable/disable launchd tasks
 3. **Menu Bar Integration**: System tray with quick access to all tasks
-4. **Startup Launch**: Option to start LaunchTime at login
+4. **Startup Launch**: Option to start runCLAUDErun at login
 5. **Advanced Options**: Environment variables, working directory, log paths
 
 ## Testing
@@ -52,4 +52,4 @@ To test the application:
 1. Run `bun dev` to start in development mode
 2. Create test tasks with various schedule types
 3. Verify plist files are created in `~/Library/LaunchAgents/`
-4. Check launchctl integration with `launchctl list | grep com.launchtime`
+4. Check launchctl integration with `launchctl list | grep com.runclauderun`

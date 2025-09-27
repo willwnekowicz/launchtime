@@ -68,7 +68,7 @@ export function TaskEditor({ task, isNew, onSave, onDelete, onCancel }: TaskEdit
   }
 
   const handleSelectFile = async () => {
-    const filePath = await window.launchtime.dialog.selectFile()
+    const filePath = await window.runclauderun.dialog.selectFile()
     if (filePath) {
       setFormData({ ...formData, command: filePath })
     }
